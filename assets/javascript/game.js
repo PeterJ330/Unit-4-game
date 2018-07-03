@@ -52,6 +52,19 @@ var userCharacter = "" ;
 
 $(document).ready(function() {
 
+$("#skywalkerImageCharacter").hide();
+$("#fettImageCharacter").hide();
+$("#vaderImageCharacter").hide();
+$("#soloImageCharacter").hide();
+$("#skywalkerImageEnemy").hide();
+$("#fettImageEnemy").hide();
+$("#vaderImageEnemy").hide();
+$("#soloImageEnemy").hide();
+$("#skywalkerImageDefender").hide();
+$("#fettImageDefender").hide();
+$("#vaderImageDefender").hide();
+$("#soloImageDefender").hide();
+
 
 // console.log(skywalker, fett, vader, solo);
 console.log("Initial User Character: "+ userCharacter);
@@ -70,7 +83,16 @@ $(".button").on("click", function characterSelect() {
             vader.character = false;
             vader.enemy = true;
             solo.character = false;
-            solo.enemy = true; 
+            solo.enemy = true;
+            //$("#skywalkerImage").hide();
+            $("#fettImage").hide();
+            $("#vaderImage").hide();
+            $("#soloImage").hide(); 
+               // $("#skywalkerImageEnemy").show();
+                $("#fettImageEnemy").show();
+                $("#vaderImageEnemy").show();
+                $("#soloImageEnemy").show();
+
         } else if (userCharacter === "fett"){
             skywalker.character = false;
             skywalker.enemy = true;
@@ -79,7 +101,16 @@ $(".button").on("click", function characterSelect() {
             vader.character = false;
             vader.enemy = true;
             solo.character = false;
-            solo.enemy = true;                         
+            solo.enemy = true; 
+            $("#skywalkerImage").hide();
+           // $("#fettImage").hide();
+            $("#vaderImage").hide();
+            $("#soloImage").hide(); 
+                $("#skywalkerImageEnemy").show();
+                //$("#fettImageEnemy").show();
+                $("#vaderImageEnemy").show();
+                $("#soloImageEnemy").show();  
+
         } else if (userCharacter === "vader"){
             skywalker.character = false;
             skywalker.enemy = true;
@@ -88,7 +119,16 @@ $(".button").on("click", function characterSelect() {
             vader.character = true;
             vader.enemy = false;
             solo.character = false;
-            solo.enemy = true;  
+            solo.enemy = true; 
+            $("#skywalkerImage").hide();
+            $("#fettImage").hide();
+           // $("#vaderImage").hide();
+            $("#soloImage").hide(); 
+                $("#skywalkerImageEnemy").show();
+                $("#fettImageEnemy").show();
+                //$("#vaderImageEnemy").show();
+                $("#soloImageEnemy").show();
+
         } else if (userCharacter === "solo"){
             skywalker.character = false;
             skywalker.enemy = true;
@@ -98,6 +138,15 @@ $(".button").on("click", function characterSelect() {
             vader.enemy = true;
             solo.character = true;
             solo.enemy = false; 
+            $("#skywalkerImage").hide();
+            $("#fettImage").hide();
+            $("#vaderImage").hide();
+           // $("#soloImage").hide(); 
+                $("#skywalkerImageEnemy").show();
+                $("#fettImageEnemy").show();
+                $("#vaderImageEnemy").show();
+               // $("#soloImageEnemy").show();
+
         }
     //}
     //console.log(skywalker, fett, vader, solo);
@@ -105,11 +154,12 @@ $(".button").on("click", function characterSelect() {
     console.log(skywalker.character, fett.character, vader.character, solo.character);
     console.log("Enemy");
     console.log(skywalker.enemy, fett.enemy, vader.enemy, solo.enemy);
+    //console.log("User Character: "+ userCharacter);
 })
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //=============================================================================
 //
-$(".button").on("click", function defender() {
+$(".button2").on("click", function defender() {
     if (skywalker.character === true || fett.character === true || vader.character === true || solo.character === true){
         console.log("nothing should happen");
     } else if (skywalker.character === false && skywalker.enemy === true){

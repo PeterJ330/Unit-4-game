@@ -13,50 +13,12 @@ body {
 
 }
 
-
-/* .skywalker {
-    width: 200px;
-    height: 150px;
-    float: left;
-    padding: 15px;
-    border: solid green ;
-
-}
-
-.fett {
-    width: 200px;
-    height: 150px;
-    float: left;
-    padding: 15px;
-    border: solid green ;
-
-}
-
-.vader {
-    width: 200px;
-    height: 150px;
-    float: left;
-    padding: 15px;
-    border: solid green ;
-
-}
-
-.solo {
-    width: 200px;
-    height: 150px;
-    float: left;
-    padding: 15px;
-    border: solid green ;
-
-} */
-
 #skywalkerImage {
     width: 200px;
     height: 150px;
     float: left;
     padding: 15px;
     border: solid green ;
-
 }
 
 #fettImage {
@@ -65,7 +27,6 @@ body {
     float: left;
     padding: 15px;
     border: solid green ;
-
 }
 
 #vaderImage {
@@ -74,7 +35,6 @@ body {
     float: left;
     padding: 15px;
     border: solid green ;
-
 }
 
 #soloImage {
@@ -83,7 +43,115 @@ body {
     float: left;
     padding: 15px;
     border: solid green ;
+}
 
+#skywalkerImageCharacter {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid green ;
+}
+
+#fettImageCharacter {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid green ;
+}
+
+#vaderImageCharacter {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid green ;
+}
+
+#soloImageCharacter {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid green ;
+}
+
+#skywalkerImageEnemy {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid black ;
+    background-color: red;
+}
+
+#fettImageEnemy {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid black ;
+    background-color: red;
+}
+
+#vaderImageEnemy{
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid black ;
+    background-color: red;
+}
+
+#soloImageEnemy {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid black ;
+    background-color: red;
+}
+
+#skywalkerImageDefender {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid white ;
+    background-color: black;
+    color: white;
+}
+
+#fettImageDefender {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid white ;
+    background-color: black;
+    color: white;
+}
+
+#vaderImageDefender {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid white ;
+    background-color: black;
+    color: white;
+    
+}
+
+#soloImageDefender {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid white ;
+    background-color: black;
+    color: white;
 }
 
 #battleZone {
