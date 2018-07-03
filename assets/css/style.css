@@ -1,0 +1,99 @@
+header {
+    height: 100px;
+
+}
+#starwars {
+    float: right;
+    padding-right: 250px;
+
+}
+
+
+body {
+
+}
+
+
+/* .skywalker {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid green ;
+
+}
+
+.fett {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid green ;
+
+}
+
+.vader {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid green ;
+
+}
+
+.solo {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid green ;
+
+} */
+
+#skywalkerImage {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid green ;
+
+}
+
+#fettImage {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid green ;
+
+}
+
+#vaderImage {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid green ;
+
+}
+
+#soloImage {
+    width: 200px;
+    height: 150px;
+    float: left;
+    padding: 15px;
+    border: solid green ;
+
+}
+
+#battleZone {
+    float: left;
+    clear: both;
+}
+
+
+
+
+footer {
+
+}
