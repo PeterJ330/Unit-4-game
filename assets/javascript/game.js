@@ -1,81 +1,110 @@
-
-
-
 var skywalker = {
-    health: 100 ,
-    attack: 8 , 
+    health: 100,
+    attack: 8,
     newAttack: 0,
-    counter: 5 ,
+    counter: 10,
     character: false,
     enemy: false,
     defender: false,
-} ;
+    defeated: false
+};
 
 var fett = {
-    health: 80 ,
-    attack: 10 , 
+    health: 100,
+    attack: 10,
     newAttack: 0,
-    counter: 7 ,
+    counter: 10,
     character: false,
     enemy: false,
     defender: false,
-} ;
+    defeated: false
+};
 
 var vader = {
-    health: 70 ,
-    attack: 12, 
+    health: 100,
+    attack: 12,
     newAttack: 0,
-    counter: 9 ,
+    counter: 10,
     character: false,
     enemy: false,
     defender: false,
-} ;
+    defeated: false
+};
 
 var solo = {
-    health: 90 ,
-    attack: 16 , 
+    health: 100,
+    attack: 16,
     newAttack: 0,
-    counter: 12 ,
+    counter: 10,
     character: false,
     enemy: false,
     defender: false,
-} ;
+    defeated: false
+};
+
+var userCharacter = "";
+var defenderCharacter = "";
 
 
-var userCharacter = "" ;
-// var enemy = "" ;
-// var defender = "" ;
+//==========================================================================================================================================================
+$(document).ready(function () {
+
+    $(".resetBtn").hide();
+
+    $("#skywalkerImageCharacter").hide();
+    $("#fettImageCharacter").hide();
+    $("#vaderImageCharacter").hide();
+    $("#soloImageCharacter").hide();
+    $("#skywalkerImageEnemy").hide();
+    $("#fettImageEnemy").hide();
+    $("#vaderImageEnemy").hide();
+    $("#soloImageEnemy").hide();
+    $("#skywalkerImageDefender").hide();
+    $("#fettImageDefender").hide();
+    $("#vaderImageDefender").hide();
+    $("#soloImageDefender").hide();
 
 
-// function that increases user character attack points by base value
+    // victory() determines when all enemies have been defeated and game has been won    
+    function victory() {
+        if (skywalker.character && fett.defeated && vader.defeated && solo.defeated) {
+            alert("Congratulations! You Are The Galactic Champion");
+            $(".attackBtn").hide();
+            $(".resetBtn").show();
+        } // Closes skywalker final victory if condition
+        else if (fett.character && skywalker.defeated && vader.defeated && solo.defeated) {
+            alert("Congratulations! You Are The Galactic Champion");
+            $(".attackBtn").hide();
+            $(".resetBtn").show();
+        } // Closes fett final victory else if condition
+        else if (vader.character && skywalker.defeated && fett.defeated && solo.defeated) {
+            alert("Congratulations! You Are The Galactic Champion");
+            $(".attackBtn").hide();
+            $(".resetBtn").show();
+        } // Closes vader final victory else if condition
+        else if (solo.character && skywalker.defeated && fett.defeated && vader.defeated) {
+            alert("Congratulations! You Are The Galactic Champion");
+            $(".attackBtn").hide();
+            $(".resetBtn").show();
+        } // Closes solo final victory else if condition
+        else {
+            alert("You Won this Battle! Select Another Enemy to Continue")
+        }
 
+console.log("Defeated");
+console.log(skywalker.defeated, fett.defeated, vader.defeated, solo.defeated);
 
-$(document).ready(function() {
+    };
+    //=============================================================================
 
-$("#skywalkerImageCharacter").hide();
-$("#fettImageCharacter").hide();
-$("#vaderImageCharacter").hide();
-$("#soloImageCharacter").hide();
-$("#skywalkerImageEnemy").hide();
-$("#fettImageEnemy").hide();
-$("#vaderImageEnemy").hide();
-$("#soloImageEnemy").hide();
-$("#skywalkerImageDefender").hide();
-$("#fettImageDefender").hide();
-$("#vaderImageDefender").hide();
-$("#soloImageDefender").hide();
+    // characterSelect() allows the user to choose a player character, sets the remaining images to "enemy", hides the bank of selectable characters, displays
+    // user's character beneath the "Your Character" html, unhides the images beneath "Enemies Available to Attach" html...
+    $(".button").on("click", function characterSelect() {
+        userCharacter = $(this).attr("value");
+        console.log("User Character: " + userCharacter);
+        $(".images").hide();
 
-
-// console.log(skywalker, fett, vader, solo);
-console.log("Initial User Character: "+ userCharacter);
-//=============================================================================
-//
-$(".button").on("click", function characterSelect() {
-    userCharacter = $(this).attr("value");
-    console.log("User Character: "+ userCharacter);
-
-   // function enemy(){
-        if (userCharacter === "skywalker"){
+        if (userCharacter === "skywalker") {
             skywalker.character = true;
             skywalker.enemy = false;
             fett.character = false;
@@ -84,16 +113,9 @@ $(".button").on("click", function characterSelect() {
             vader.enemy = true;
             solo.character = false;
             solo.enemy = true;
-            //$("#skywalkerImage").hide();
-            $("#fettImage").hide();
-            $("#vaderImage").hide();
-            $("#soloImage").hide(); 
-               // $("#skywalkerImageEnemy").show();
-                $("#fettImageEnemy").show();
-                $("#vaderImageEnemy").show();
-                $("#soloImageEnemy").show();
+            $("#skywalkerImageCharacter").show();
 
-        } else if (userCharacter === "fett"){
+        } else if (userCharacter === "fett") {
             skywalker.character = false;
             skywalker.enemy = true;
             fett.character = true;
@@ -101,17 +123,10 @@ $(".button").on("click", function characterSelect() {
             vader.character = false;
             vader.enemy = true;
             solo.character = false;
-            solo.enemy = true; 
-            $("#skywalkerImage").hide();
-           // $("#fettImage").hide();
-            $("#vaderImage").hide();
-            $("#soloImage").hide(); 
-                $("#skywalkerImageEnemy").show();
-                //$("#fettImageEnemy").show();
-                $("#vaderImageEnemy").show();
-                $("#soloImageEnemy").show();  
+            solo.enemy = true;
+            $("#fettImageCharacter").show();
 
-        } else if (userCharacter === "vader"){
+        } else if (userCharacter === "vader") {
             skywalker.character = false;
             skywalker.enemy = true;
             fett.character = false;
@@ -119,17 +134,10 @@ $(".button").on("click", function characterSelect() {
             vader.character = true;
             vader.enemy = false;
             solo.character = false;
-            solo.enemy = true; 
-            $("#skywalkerImage").hide();
-            $("#fettImage").hide();
-           // $("#vaderImage").hide();
-            $("#soloImage").hide(); 
-                $("#skywalkerImageEnemy").show();
-                $("#fettImageEnemy").show();
-                //$("#vaderImageEnemy").show();
-                $("#soloImageEnemy").show();
+            solo.enemy = true;
+            $("#vaderImageCharacter").show();
 
-        } else if (userCharacter === "solo"){
+        } else if (userCharacter === "solo") {
             skywalker.character = false;
             skywalker.enemy = true;
             fett.character = false;
@@ -137,80 +145,260 @@ $(".button").on("click", function characterSelect() {
             vader.character = false;
             vader.enemy = true;
             solo.character = true;
-            solo.enemy = false; 
-            $("#skywalkerImage").hide();
-            $("#fettImage").hide();
-            $("#vaderImage").hide();
-           // $("#soloImage").hide(); 
-                $("#skywalkerImageEnemy").show();
-                $("#fettImageEnemy").show();
-                $("#vaderImageEnemy").show();
-               // $("#soloImageEnemy").show();
-
+            solo.enemy = false;
+            $("#soloImageCharacter").show();
         }
-    //}
-    //console.log(skywalker, fett, vader, solo);
-    console.log("Character");
-    console.log(skywalker.character, fett.character, vader.character, solo.character);
-    console.log("Enemy");
-    console.log(skywalker.enemy, fett.enemy, vader.enemy, solo.enemy);
-    //console.log("User Character: "+ userCharacter);
+
+        //console.log("User Character: "+ userCharacter);
+
+        if (skywalker.enemy) {
+            $("#skywalkerImageEnemy").show();
+        }
+        if (fett.enemy) {
+            $("#fettImageEnemy").show();
+        }
+        if (vader.enemy) {
+            $("#vaderImageEnemy").show();
+        }
+        if (solo.enemy) {
+            $("#soloImageEnemy").show();
+        }
+    }) //closes characterSelect function
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //=============================================================================
+
+    // defender() sets the available enemy characters to a "defender character" based on which character the user 'clicks'
+    $(".button2").on("click", function defender() {
+        defenderCharacter = $(this).attr("value");
+        console.log("Defender: " + defenderCharacter);
+
+        if (defenderCharacter === "skywalker") {
+            skywalker.defender = true;
+            skywalker.enemy = false;
+        } // Closes skywalker Defenders if
+        else if (defenderCharacter === "fett") {
+            fett.defender = true;
+            fett.enemy = false;
+        } // Closes fett Defenders else if 
+        else if (defenderCharacter === "vader") {
+            vader.defender = true;
+            vader.enemy = false;
+        } // Closes vader Defenders else if 
+        else if (defenderCharacter === "solo") {
+            solo.defender = true;
+            solo.enemy = false;
+        } // Closes solo Defenders else if
+
+        if (skywalker.defender) {
+            $("#skywalkerImageDefender").show();
+        }
+        if (fett.defender) {
+            $("#fettImageDefender").show();
+        }
+        if (vader.defender) {
+            $("#vaderImageDefender").show();
+        }
+        if (solo.defender) {
+            $("#soloImageDefender").show();
+        }
+        if (skywalker.enemy === false) {
+            $("#skywalkerImageEnemy").hide();
+        }
+        if (fett.enemy === false) {
+            $("#fettImageEnemy").hide();
+        }
+        if (vader.enemy === false) {
+            $("#vaderImageEnemy").hide();
+        }
+        if (solo.enemy === false) {
+            $("#soloImageEnemy").hide();
+        }
+
+console.log("Defender Status");
+console.log(skywalker.defender, fett.defender, vader.defender, solo.defender);
+console.log("Character Status");
+console.log(skywalker.character, fett.character, vader.character, solo.character);
+console.log("Enemy Status");
+console.log(skywalker.enemy, fett.enemy, vader.enemy, solo.enemy);
+    }) // Closese defender function
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //=============================================================================
+    // function that increases user character attack points by base value
+    $(".attackBtn").on("click", function attack() {
+        if (userCharacter === "") {
+            alert("No User Character Selected");
+        }
+        else if (userCharacter === "skywalker") {
+            skywalker.newAttack += skywalker.attack;
+            if (skywalker.defender === true) {
+                skywalker.health -= skywalker.newAttack;
+            } else if (fett.defender === true) {
+                fett.health -= skywalker.newAttack;
+                skywalker.health -= fett.counter;
+            } else if (vader.defender === true) {
+                vader.health -= skywalker.newAttack;
+                skywalker.health -= vader.counter;
+            } else if (solo.defender === true) {
+                solo.health -= skywalker.newAttack;
+                skywalker.health -= solo.counter;
+            }
+        } // Closes userCharacter === skywalker else if
+        else if (userCharacter === "fett") {
+            fett.newAttack += fett.attack;
+            if (skywalker.defender === true) {
+                skywalker.health -= fett.newAttack;
+                fett.health -= skywalker.counter;
+            } else if (fett.defender === true) {
+                fett.health -= fett.newAttack;
+                fett.health -= fett.counter;
+            } else if (vader.defender === true) {
+                vader.health -= fett.newAttack;
+                fett.health -= vader.counter;
+            } else if (solo.defender === true) {
+                solo.health -= fett.newAttack;
+                fett.health -= solo.counter;
+            }
+        } // Closes userCharacter === fett else if
+        else if (userCharacter === "vader") {
+            vader.newAttack += vader.attack;
+            if (skywalker.defender === true) {
+                skywalker.health -= vader.newAttack;
+                vader.health -= skywalker.counter;
+            } else if (fett.defender === true) {
+                fett.health -= vader.newAttack;
+                vader.health -= fett.counter;
+            } else if (vader.defender === true) {
+                vader.health -= vader.newAttack;
+                vader.health -= vader.counter;
+            } else if (solo.defender === true) {
+                solo.health -= vader.newAttack;
+                vader.health -= solo.counter;
+            }
+        } // Closes userCharacter === vader else if
+        else if (userCharacter === "solo") {
+            solo.newAttack += solo.attack;
+            if (skywalker.defender === true) {
+                skywalker.health -= solo.newAttack;
+                solo.health -= skywalker.counter;
+            } else if (fett.defender === true) {
+                fett.health -= solo.newAttack;
+                solo.health -= fett.counter;
+            } else if (vader.defender === true) {
+                vader.health -= solo.newAttack;
+                solo.health -= vader.counter;
+            } else if (solo.defender === true) {
+                solo.health -= solo.newAttack;
+                solo.health -= solo.counter;
+            }
+        } // Closes userCharacter === solo else if
+
+console.log("User Character's New Attack: " + userCharacter);
+console.log(skywalker.newAttack, fett.newAttack, vader.newAttack, solo.newAttack);
+console.log("Character Health");
+console.log(skywalker.health, fett.health, vader.health, solo.health);
+
+        //function youlose(){
+        if (skywalker.character === true && skywalker.health <= 0) {
+            alert("YOU LOSE!");
+            $(".attackBtn").hide();
+            $(".resetBtn").show();
+        }
+        else if (fett.character === true && fett.health <= 0) {
+            alert("YOU LOSE!");
+            $(".attackBtn").hide();
+            $(".resetBtn").show();
+        }
+        else if (vader.character === true && vader.health <= 0) {
+            alert("YOU LOSE!");
+            $(".attackBtn").hide();
+            $(".resetBtn").show();
+        }
+        else if (solo.character === true && solo.health <= 0) {
+            alert("YOU LOSE!");
+            $(".attackBtn").hide();
+            $(".resetBtn").show();
+        }
+        // ================ Conditionals that determine defender has been defeated =================
+        if (skywalker.defender === true && skywalker.health <= 0) {
+            $("#skywalkerImageDefender").hide();
+            skywalker.defender = false;
+            skywalker.defeated = true;
+            victory();
+        }
+        else if (fett.defender === true && fett.health <= 0) {
+            $("#fettImageDefender").hide();
+            fett.defender = false;
+            fett.defeated = true;
+            victory();
+        }
+        else if (vader.defender === true && vader.health <= 0) {
+            $("#vaderImageDefender").hide();
+            vader.defender = false;
+            vader.defeated = true;
+            victory();
+        }
+        else if (solo.defender === true && solo.health <= 0) {
+            $("#soloImageDefender").hide();
+            solo.defender = false;
+            solo.defeated = true;
+            victory();
+        }
+
+    }) // Closes attack function
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    $(".resetBtn").on("click", function reset() {
+        skywalker.health = 100,
+            skywalker.attack = 8,
+            skywalker.newAttack = 0,
+            skywalker.counter = 10,
+            skywalker.character = false,
+            skywalker.enemy = false,
+            skywalker.defender = false,
+
+            fett.health = 100,
+            fett.attack = 10,
+            fett.newAttack = 0,
+            fett.counter = 10,
+            fett.character = false,
+            fett.enemy = false,
+            fett.defender = false,
+
+            vader.health = 100,
+            vader.attack = 12,
+            vader.newAttack = 0,
+            vader.counter = 10,
+            vader.character = false,
+            vader.enemy = false,
+            vader.defender = false,
+
+            solo.health = 100,
+            solo.attack = 16,
+            solo.newAttack = 0,
+            solo.counter = 10,
+            solo.character = false,
+            solo.enemy = false,
+            solo.defender = false
+
+        $(".resetBtn").hide();
+        $(".attackBtn").show();
+        $(".images").show();
+
+        $("#skywalkerImageCharacter").hide();
+        $("#fettImageCharacter").hide();
+        $("#vaderImageCharacter").hide();
+        $("#soloImageCharacter").hide();
+        $("#skywalkerImageEnemy").hide();
+        $("#fettImageEnemy").hide();
+        $("#vaderImageEnemy").hide();
+        $("#soloImageEnemy").hide();
+        $("#skywalkerImageDefender").hide();
+        $("#fettImageDefender").hide();
+        $("#vaderImageDefender").hide();
+        $("#soloImageDefender").hide();
+    })
 })
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//=============================================================================
-//
-$(".button2").on("click", function defender() {
-    if (skywalker.character === true || fett.character === true || vader.character === true || solo.character === true){
-        console.log("nothing should happen");
-    } else if (skywalker.character === false && skywalker.enemy === true){
-        skywalker.defender === true;
-    } else if (fett.character === false && fett.enemy === true){
-        fett.defender === true;
-    } else if (vader.character === false && vader.enemy === true){
-        vader.defender === true;
-    } else if (solo.character === false && solo.enemy === true){
-        solo.defender === true;
-    }
-    console.log(skywalker.defender, fett.defender, vader.defender, solo.defender);
-})
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//=============================================================================
-//
-$(".attackBtn").on("click",function attack(){
-    if (userCharacter === ""){
-        console.log("No User Character Selected");
-    } else if (userCharacter === "skywalker") {
-        skywalker.newAttack += skywalker.attack;
-    } else if (userCharacter === "fett") {
-        fett.newAttack += fett.attack;
-    } else if (userCharacter === "vader") {
-        vader.newAttack += vader.attack;
-    } else if (userCharacter === "solo") {
-        solo.newAttack += solo.attack;
-    }
-    console.log("attack user character: "+ userCharacter);
-    // console.log(skywalker, fett, vader, solo);
-    
-})
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-
-
-
-
-
-    
-
-
-
-
-
-
-//function reset()
-
-
-
-
-
-})

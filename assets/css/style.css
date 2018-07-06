@@ -12,6 +12,43 @@ header {
 body {
 
 }
+#character, #enemies, #fight {
+    clear: both;
+    
+}
+
+#skywalkerHP, #fettHP, #vaderHP, #soloHP {
+    width: 230px;
+    height: 15px;
+    z-index: 1;
+    text-align: center;
+    margin: 0;
+    float: left;
+}
+
+#skywalkerHP{
+    position: relative;
+    right: 236px;
+    top: 175px;
+}
+
+#fettHP{
+    position: relative;
+    right: 472px;
+    top: 175px;
+}
+
+#vaderHP{
+    position: relative;
+    left: 492px;
+    bottom: 21px;
+}
+
+#soloHP{
+   position: relative;
+   left: 492px;
+   bottom: 21px;
+}
 
 #skywalkerImage {
     width: 200px;
@@ -19,6 +56,9 @@ body {
     float: left;
     padding: 15px;
     border: solid green ;
+    /* z-index: -1;
+    position: relative; */
+
 }
 
 #fettImage {
@@ -27,6 +67,9 @@ body {
     float: left;
     padding: 15px;
     border: solid green ;
+    /* z-index: -1; */
+    /* position: relative;
+    right: 230px; */
 }
 
 #vaderImage {
@@ -35,14 +78,22 @@ body {
     float: left;
     padding: 15px;
     border: solid green ;
+    /* z-index: -1; */
+    /* position: relative;
+    right: 460px; */
 }
 
 #soloImage {
     width: 200px;
     height: 150px;
-    float: left;
+    /* float: left; */
     padding: 15px;
     border: solid green ;
+    /* z-index: -1; */
+    /* position: relative;
+    bottom: 196px;
+    left: 273px; */
+
 }
 
 #skywalkerImageCharacter {
@@ -51,6 +102,7 @@ body {
     float: left;
     padding: 15px;
     border: solid green ;
+    
 }
 
 #fettImageCharacter {
