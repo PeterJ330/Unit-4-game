@@ -1,102 +1,121 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Star Wars RPG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous"> -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="resetsheet" href="assets/css/reset.css">
-    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/game.js"></script>
+    <link rel="stylesheet" href="assets/css/reset.css">
 </head>
+
 <body>
-    <header>
+
+    <img id="backgroundImage" src="assets/images/Star Wars Background.png" alt="Background">
+
+    <section id="bodyFormat">
+
+        <div class="title">
             <h1 id="starwars">Star Wars RPG</h1>
-
-    </header>
-    
-<div class="images">
-    <img id="skywalkerImage" class="button" value="skywalker" src="assets/images/Luke Skywalker.png" alt="Luke Skywalker">
-    <!-- <div id="skywalkerHP">HP: skywalker.health</div>     -->
-    <img id="fettImage" class="button" value="fett" src="assets/images/Boba Fett.png" alt="Boba Fett">  
-    <!-- <div id="fettHP">HP: fett.health</div>        -->
-    <img id="vaderImage" class="button" value="vader" src="assets/images/Darth Vader.png" alt="Darth Vader">
-    <!-- <div id="vaderHP">HP: vader.health</div>     -->
-    <img id="soloImage" class="button" value="solo" src="assets/images/Han Solo.png" alt="Han Solo">  
-    <!-- <div id="soloHP">HP: solo.health</div>    -->
-</div>
-
-<br>
-
-
-    <p id="character">Your Character</p>
-
-<div class="imagesCharacter">
-        <img id="skywalkerImageCharacter" class="button0" value="skywalker" src="assets/images/Luke Skywalker.png" alt="Luke Skywalker"> 
-        <!-- <div id="skywalkerHP">HP: skywalker.health</div>    -->
-        <img id="fettImageCharacter" class="button0" value="fett" src="assets/images/Boba Fett.png" alt="Boba Fett">
-        <!-- <div id="fettHP">HP: fett.health</div>      -->
-        <img id="vaderImageCharacter" class="button0" value="vader" src="assets/images/Darth Vader.png" alt="Darth Vader"> 
-        <!-- <div id="vaderHP">HP: vader.health</div>     -->
-        <img id="soloImageCharacter" class="button0" value="solo" src="assets/images/Han Solo.png" alt="Han Solo"> 
-        <!-- <div id="soloHP">HP: solo.health</div>     -->
-    </div>
-
-<br>
-    <p id="enemies">Enemies Available to Attack</p>
-<br>
-    <div class="imagesEnemy">
-            <img id="skywalkerImageEnemy" class="button2" value="skywalker" src="assets/images/Luke Skywalker.png" alt="Luke Skywalker">                    
-            <img id="fettImageEnemy" class="button2" value="fett" src="assets/images/Boba Fett.png" alt="Boba Fett">        
-            <img id="vaderImageEnemy" class="button2" value="vader" src="assets/images/Darth Vader.png" alt="Darth Vader">                        
-            <img id="soloImageEnemy" class="button2" value="solo" src="assets/images/Han Solo.png" alt="Han Solo">                
         </div>
 
-<br>
-    <p id="fight">Fight Section</p>
-    <button class="attackBtn">Attack</button>
-    <button class="resetBtn">reset</button>
-    <br>
-    <p id="defender">Defender</p>
-    <div class="imagesDefender">
-            <img id="skywalkerImageDefender" class="button3" value="skywalker" src="assets/images/Luke Skywalker.png" alt="Luke Skywalker">                        
-            <img id="fettImageDefender" class="button3" value="fett" src="assets/images/Boba Fett.png" alt="Boba Fett">                        
-            <img id="vaderImageDefender" class="button3" value="vader" src="assets/images/Darth Vader.png" alt="Darth Vader">                
-            <img id="soloImageDefender" class="button3" value="solo" src="assets/images/Han Solo.png" alt="Han Solo">                
+        <div class="images">
+            <img id="skywalkerImage" class="button" value="skywalker" src="assets/images/Luke Skywalker.png" alt="Luke Skywalker">
+            <img id="fettImage" class="button" value="fett" src="assets/images/Boba Fett.png" alt="Boba Fett">
+            <img id="vaderImage" class="button" value="vader" src="assets/images/Darth Vader.png" alt="Darth Vader">
+            <img id="soloImage" class="button" value="solo" src="assets/images/Han Solo.png" alt="Han Solo">
         </div>
 
-        
+        <br>
+        <br>
+        <div class="imagesText">
+            <div id="skywalkerHP">HP: skywalker.health</div>
+            <div id="fettHP">HP: fett.health</div>
+            <div id="vaderHP">HP: vader.health</div>
+            <div id="soloHP">HP: solo.health</div>
+        </div>
+
+        <br>
+
+        <p id="character">
+            <strong>Your Character</strong>
+        </p>
+
+        <div class="imagesCharacter">
+            <img id="skywalkerImageCharacter" class="button1" value="skywalker" src="assets/images/Luke Skywalker.png" alt="Luke Skywalker">
+            <img id="fettImageCharacter" class="button1" value="fett" src="assets/images/Boba Fett.png" alt="Boba Fett">
+            <img id="vaderImageCharacter" class="button1" value="vader" src="assets/images/Darth Vader.png" alt="Darth Vader">
+            <img id="soloImageCharacter" class="button1" value="solo" src="assets/images/Han Solo.png" alt="Han Solo">
+        </div>
+
+        <div class="characterText">
+            <div id="skywalkerHP1">HP: skywalker.health</div>
+            <div id="fettHP1">HP: fett.health</div>
+            <div id="vaderHP1">HP: vader.health</div>
+            <div id="soloHP1">HP: solo.health</div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <p id="enemies">
+            <strong>Enemies Available to Attack</strong>
+        </p>
+
+        <div class="imagesEnemy">
+            <img id="skywalkerImageEnemy" class="button2" value="skywalker" src="assets/images/Luke Skywalker.png" alt="Luke Skywalker">
+            <img id="fettImageEnemy" class="button2" value="fett" src="assets/images/Boba Fett.png" alt="Boba Fett">
+            <img id="vaderImageEnemy" class="button2" value="vader" src="assets/images/Darth Vader.png" alt="Darth Vader">
+            <img id="soloImageEnemy" class="button2" value="solo" src="assets/images/Han Solo.png" alt="Han Solo">
+        </div>
+
+        <div class="enemyText">
+            <div id="skywalkerHP2">HP: skywalker.health</div>
+            <div id="fettHP2">HP: fett.health</div>
+            <div id="vaderHP2">HP: vader.health</div>
+            <div id="soloHP2">HP: solo.health</div>
+        </div>
+
+        <br>
+        <p id="fight">
+            <strong>Fight Section</strong>
+        </p>
+
+        <button class="attackBtn">Attack</button>
+        <button class="resetBtn">reset</button>
+
+        <br>
+
+        <p id="defender">
+            <strong>Defender</strong>
+        </p>
+
+        <div class="imagesDefender">
+            <img id="skywalkerImageDefender" class="button3" value="skywalker" src="assets/images/Luke Skywalker.png" alt="Luke Skywalker">
+            <img id="fettImageDefender" class="button3" value="fett" src="assets/images/Boba Fett.png" alt="Boba Fett">
+            <img id="vaderImageDefender" class="button3" value="vader" src="assets/images/Darth Vader.png" alt="Darth Vader">
+            <img id="soloImageDefender" class="button3" value="solo" src="assets/images/Han Solo.png" alt="Han Solo">
+        </div>
+
+        <div class="defenderText">
+            <div id="skywalkerHP3">HP: skywalker.health</div>
+            <div id="fettHP3">HP: fett.health</div>
+            <div id="vaderHP3">HP: vader.health</div>
+            <div id="soloHP3">HP: solo.health</div>
+        </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </section>
 
     <footer>
-        
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+
 </body>
+
 </html>
