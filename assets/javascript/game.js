@@ -520,6 +520,16 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
         $("#darthVader3").hide()
         $("#hanSolo3").hide()
 
+        $("#skywalkerHP1").text("HP: 100");
+        $("#fettHP1").text("HP: 100");
+        $("#vaderHP1").text("HP: 100");
+        $("#soloHP1").text("HP: 100");
+    
+        $("#skywalkerHP3").text("HP: 100");
+        $("#fettHP3").text("HP: 100");
+        $("#vaderHP3").text("HP: 100");
+        $("#soloHP3").text("HP: 100");
+
     })
 })
 
