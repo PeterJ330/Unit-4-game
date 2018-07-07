@@ -452,6 +452,7 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
             skywalker.character = false,
             skywalker.enemy = false,
             skywalker.defender = false,
+            skywalker.defeated = false,
 
             fett.health = 100,
             fett.attack = 10,
@@ -460,6 +461,7 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
             fett.character = false,
             fett.enemy = false,
             fett.defender = false,
+            fett.defeated = false,
 
             vader.health = 100,
             vader.attack = 12,
@@ -468,6 +470,7 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
             vader.character = false,
             vader.enemy = false,
             vader.defender = false,
+            vader.defeated = false,
 
             solo.health = 100,
             solo.attack = 16,
@@ -476,6 +479,10 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
             solo.character = false,
             solo.enemy = false,
             solo.defender = false
+            solo.defeated = false,
+
+            userCharacter = "";
+            defenderCharacter = "";
 
         $(".resetBtn").hide();
         $(".attackBtn").show();
