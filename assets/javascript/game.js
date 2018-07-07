@@ -1,8 +1,8 @@
 var skywalker = {
     health: 100,
-    attack: 8,
+    attack: 20,
     newAttack: 0,
-    counter: 10,
+    counter: 35,
     character: false,
     enemy: false,
     defender: false,
@@ -10,10 +10,10 @@ var skywalker = {
 };
 
 var fett = {
-    health: 100,
-    attack: 10,
+    health: 120,
+    attack: 20,
     newAttack: 0,
-    counter: 10,
+    counter: 8,
     character: false,
     enemy: false,
     defender: false,
@@ -21,10 +21,10 @@ var fett = {
 };
 
 var vader = {
-    health: 100,
-    attack: 12,
+    health: 140,
+    attack: 15,
     newAttack: 0,
-    counter: 10,
+    counter: 15,
     character: false,
     enemy: false,
     defender: false,
@@ -32,10 +32,10 @@ var vader = {
 };
 
 var solo = {
-    health: 100,
-    attack: 16,
+    health: 160,
+    attack: 12,
     newAttack: 0,
-    counter: 10,
+    counter: 20,
     character: false,
     enemy: false,
     defender: false,
@@ -446,36 +446,36 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
 
     $(".resetBtn").on("click", function reset() {
         skywalker.health = 100,
-            skywalker.attack = 8,
+            skywalker.attack = 20,
             skywalker.newAttack = 0,
-            skywalker.counter = 10,
+            skywalker.counter = 35,
             skywalker.character = false,
             skywalker.enemy = false,
             skywalker.defender = false,
             skywalker.defeated = false,
 
-            fett.health = 100,
-            fett.attack = 10,
+            fett.health = 120,
+            fett.attack = 20,
             fett.newAttack = 0,
-            fett.counter = 10,
+            fett.counter = 8,
             fett.character = false,
             fett.enemy = false,
             fett.defender = false,
             fett.defeated = false,
 
-            vader.health = 100,
-            vader.attack = 12,
+            vader.health = 140,
+            vader.attack = 15,
             vader.newAttack = 0,
-            vader.counter = 10,
+            vader.counter = 15,
             vader.character = false,
             vader.enemy = false,
             vader.defender = false,
             vader.defeated = false,
 
-            solo.health = 100,
-            solo.attack = 16,
+            solo.health = 160,
+            solo.attack = 12,
             solo.newAttack = 0,
-            solo.counter = 10,
+            solo.counter = 20,
             solo.character = false,
             solo.enemy = false,
             solo.defender = false
@@ -528,14 +528,14 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
         $("#hanSolo3").hide()
 
         $("#skywalkerHP1").text("HP: 100");
-        $("#fettHP1").text("HP: 100");
-        $("#vaderHP1").text("HP: 100");
-        $("#soloHP1").text("HP: 100");
+        $("#fettHP1").text("HP: 120");
+        $("#vaderHP1").text("HP: 140");
+        $("#soloHP1").text("HP: 160");
     
         $("#skywalkerHP3").text("HP: 100");
-        $("#fettHP3").text("HP: 100");
-        $("#vaderHP3").text("HP: 100");
-        $("#soloHP3").text("HP: 100");
+        $("#fettHP3").text("HP: 120");
+        $("#vaderHP3").text("HP: 140");
+        $("#soloHP3").text("HP: 160");
 
     })
 })
