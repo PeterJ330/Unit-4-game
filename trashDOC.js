@@ -1,75 +1,38 @@
-$(".imagesNames").show()
-$("#lukeSkywalker").show()
-$("#bobaFett").show()
-$("#darthVader").show()
-$("#hanSolo").show()
+skywalker.health = 100,
+skywalker.attack = 20,
+skywalker.newAttack = 0,
+skywalker.counter = 40,
+skywalker.character = false,
+skywalker.enemy = false,
+skywalker.defender = false,
+skywalker.defeated = false,
 
-// Character Names
-$("#lukeSkywalker1").show()
-$("#bobaFett1").show()
-$("#darthVader1").show()
-$("#hanSolo1").show()
+fett.health = 130,
+fett.attack = 15,
+fett.newAttack = 0,
+fett.counter = 12,
+fett.character = false,
+fett.enemy = false,
+fett.defender = false,
+fett.defeated = false,
 
-// Enemy Names
-$("#lukeSkywalker2").hide()
-$("#bobaFett2").hide()
-$("#darthVader2").hide()
-$("#hanSolo2").hide()
+vader.health = 140,
+vader.attack = 12,
+vader.newAttack = 0,
+vader.counter = 14,
+vader.character = false,
+vader.enemy = false,
+vader.defender = false,
+vader.defeated = false,
 
-// Defender Names
-$("#lukeSkywalker3").hide()
-$("#bobaFett3").hide()
-$("#darthVader3").hide()
-$("#hanSolo3").hide()
+solo.health = 160,
+solo.attack = 10,
+solo.newAttack = 0,
+solo.counter = 16,
+solo.character = false,
+solo.enemy = false,
+solo.defender = false
+solo.defeated = false,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // characterText
-    $("#skywalkerHP1").hide();
-    $("#fettHP1").hide();
-    $("#vaderHP1").hide();
-    $("#soloHP1").hide();
-                            // enemyText
-                            $("#skywalkerHP2").hide();
-                            $("#fettHP2").hide();
-                            $("#vaderHP2").hide();
-                            $("#soloHP2").hide();
-    // defenderText
-    $("#skywalkerHP3").hide();
-    $("#fettHP3").hide();
-    $("#vaderHP3").hide();
-    $("#soloHP3").hide();
+userCharacter = "";
+defenderCharacter = "";

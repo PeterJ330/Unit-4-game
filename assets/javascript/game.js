@@ -2,7 +2,7 @@ var skywalker = {
     health: 100,
     attack: 20,
     newAttack: 0,
-    counter: 35,
+    counter: 40,
     character: false,
     enemy: false,
     defender: false,
@@ -10,18 +10,7 @@ var skywalker = {
 };
 
 var fett = {
-    health: 120,
-    attack: 20,
-    newAttack: 0,
-    counter: 8,
-    character: false,
-    enemy: false,
-    defender: false,
-    defeated: false
-};
-
-var vader = {
-    health: 140,
+    health: 130,
     attack: 15,
     newAttack: 0,
     counter: 15,
@@ -31,11 +20,22 @@ var vader = {
     defeated: false
 };
 
-var solo = {
-    health: 160,
+var vader = {
+    health: 140,
     attack: 12,
     newAttack: 0,
-    counter: 20,
+    counter: 12,
+    character: false,
+    enemy: false,
+    defender: false,
+    defeated: false
+};
+
+var solo = {
+    health: 160,
+    attack: 10,
+    newAttack: 0,
+    counter: 14,
     character: false,
     enemy: false,
     defender: false,
@@ -448,34 +448,34 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
         skywalker.health = 100,
             skywalker.attack = 20,
             skywalker.newAttack = 0,
-            skywalker.counter = 35,
+            skywalker.counter = 40,
             skywalker.character = false,
             skywalker.enemy = false,
             skywalker.defender = false,
             skywalker.defeated = false,
 
-            fett.health = 120,
-            fett.attack = 20,
+            fett.health = 130,
+            fett.attack = 15,
             fett.newAttack = 0,
-            fett.counter = 8,
+            fett.counter = 12,
             fett.character = false,
             fett.enemy = false,
             fett.defender = false,
             fett.defeated = false,
 
             vader.health = 140,
-            vader.attack = 15,
+            vader.attack = 12,
             vader.newAttack = 0,
-            vader.counter = 15,
+            vader.counter = 14,
             vader.character = false,
             vader.enemy = false,
             vader.defender = false,
             vader.defeated = false,
 
             solo.health = 160,
-            solo.attack = 12,
+            solo.attack = 10,
             solo.newAttack = 0,
-            solo.counter = 20,
+            solo.counter = 16,
             solo.character = false,
             solo.enemy = false,
             solo.defender = false
