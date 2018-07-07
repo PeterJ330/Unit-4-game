@@ -71,18 +71,33 @@ $(document).ready(function () {
     $("#fettHP1").hide();
     $("#vaderHP1").hide();
     $("#soloHP1").hide();
+    // Character Names
+    $("#lukeSkywalker1").hide()
+    $("#bobaFett1").hide()
+    $("#darthVader1").hide()
+    $("#hanSolo1").hide()
 
     // Enemy Text
     $("#skywalkerHP2").hide();
     $("#fettHP2").hide();
     $("#vaderHP2").hide();
     $("#soloHP2").hide();
+    // Enemy Names
+    $("#lukeSkywalker2").hide()
+    $("#bobaFett2").hide()
+    $("#darthVader2").hide()
+    $("#hanSolo2").hide()
 
     // Defender Text
     $("#skywalkerHP3").hide();
     $("#fettHP3").hide();
     $("#vaderHP3").hide();
     $("#soloHP3").hide();
+    // Defender Names
+    $("#lukeSkywalker3").hide()
+    $("#bobaFett3").hide()
+    $("#darthVader3").hide()
+    $("#hanSolo3").hide()
 
 
 
@@ -126,6 +141,7 @@ console.log(skywalker.defeated, fett.defeated, vader.defeated, solo.defeated);
         console.log("User Character: " + userCharacter);
         $(".images").hide();
         $(".imagesText").hide();
+        $(".imagesNames").hide()
 
         if (userCharacter === "skywalker") {
             skywalker.character = true;
@@ -138,6 +154,7 @@ console.log(skywalker.defeated, fett.defeated, vader.defeated, solo.defeated);
             solo.enemy = true;
             $("#skywalkerImageCharacter").show();
             $("#skywalkerHP1").show();
+            $("#lukeSkywalker1").show()
 
         } else if (userCharacter === "fett") {
             skywalker.character = false;
@@ -150,6 +167,7 @@ console.log(skywalker.defeated, fett.defeated, vader.defeated, solo.defeated);
             solo.enemy = true;
             $("#fettImageCharacter").show();
             $("#fettHP1").show();
+            $("#bobaFett1").show()
 
         } else if (userCharacter === "vader") {
             skywalker.character = false;
@@ -162,6 +180,7 @@ console.log(skywalker.defeated, fett.defeated, vader.defeated, solo.defeated);
             solo.enemy = true;
             $("#vaderImageCharacter").show();
             $("#vaderHP1").show();
+            $("#darthVader1").show()
             
         } else if (userCharacter === "solo") {
             skywalker.character = false;
@@ -174,23 +193,28 @@ console.log(skywalker.defeated, fett.defeated, vader.defeated, solo.defeated);
             solo.enemy = false;
             $("#soloImageCharacter").show();
             $("#soloHP1").show();
+            $("#hanSolo1").show()
         }
 
         if (skywalker.enemy) {
             $("#skywalkerImageEnemy").show();
             $("#skywalkerHP2").show();
+            $("#lukeSkywalker2").show()
         }
         if (fett.enemy) {
             $("#fettImageEnemy").show();
             $("#fettHP2").show();
+            $("#bobaFett2").show()
         }
         if (vader.enemy) {
             $("#vaderImageEnemy").show();
             $("#vaderHP2").show();
+            $("#darthVader2").show()
         }
         if (solo.enemy) {
             $("#soloImageEnemy").show();
             $("#soloHP2").show();
+            $("#hanSolo2").show()
         }
     }) //closes characterSelect function
 
@@ -222,34 +246,42 @@ console.log(skywalker.defeated, fett.defeated, vader.defeated, solo.defeated);
         if (skywalker.defender) {
             $("#skywalkerImageDefender").show();
             $("#skywalkerHP3").show();
+            $("#lukeSkywalker3").show()
         }
         if (fett.defender) {
             $("#fettImageDefender").show();
             $("#fettHP3").show();
+            $("#bobaFett3").show()
         }
         if (vader.defender) {
             $("#vaderImageDefender").show();
             $("#vaderHP3").show();
+            $("#darthVader3").show()
         }
         if (solo.defender) {
             $("#soloImageDefender").show();
             $("#soloHP3").show();
+            $("#hanSolo3").show()
         }
         if (skywalker.enemy === false) {
             $("#skywalkerImageEnemy").hide();
-            $("#skywalkerHP2").hide();                        
+            $("#skywalkerHP2").hide();  
+            $("#lukeSkywalker2").hide()                      
         }
         if (fett.enemy === false) {
             $("#fettImageEnemy").hide();
             $("#fettHP2").hide();
+            $("#bobaFett2").hide()
         }
         if (vader.enemy === false) {
             $("#vaderImageEnemy").hide();
             $("#vaderHP2").hide();
+            $("#darthVader2").hide()
         }
         if (solo.enemy === false) {
             $("#soloImageEnemy").hide();
             $("#soloHP2").hide();
+            $("#hanSolo2").hide()
         }
 
 console.log("Defender Status");
@@ -267,7 +299,6 @@ console.log(skywalker.enemy, fett.enemy, vader.enemy, solo.enemy);
         if (userCharacter === "" ) {
             alert("No User Character Selected");
         }
-       // else if ()
         else if (userCharacter === "skywalker") {
             skywalker.newAttack += skywalker.attack;
             if (skywalker.defender === true) {
@@ -362,6 +393,7 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
         if (skywalker.defender === true && skywalker.health <= 0) {
             $("#skywalkerImageDefender").hide();
             $("#skywalkerHP3").hide();
+            $("#lukeSkywalker3").hide()
             skywalker.defender = false;
             skywalker.defeated = true;
             victory();
@@ -369,6 +401,7 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
         else if (fett.defender === true && fett.health <= 0) {
             $("#fettImageDefender").hide();
             $("#fettHP3").hide();
+            $("#bobaFett3").hide()
             fett.defender = false;
             fett.defeated = true;
             victory();
@@ -376,6 +409,7 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
         else if (vader.defender === true && vader.health <= 0) {
             $("#vaderImageDefender").hide();
             $("#vaderHP3").hide();
+            $("#darthVader3").hide()
             vader.defender = false;
             vader.defeated = true;
             victory();
@@ -383,6 +417,7 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
         else if (solo.defender === true && solo.health <= 0) {
             $("#soloImageDefender").hide();
             $("#soloHP3").hide();
+            $("#hanSolo3").hide()
             solo.defender = false;
             solo.defeated = true;
             victory();
@@ -430,6 +465,7 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
         $(".attackBtn").show();
         $(".images").show();
         $(".imagesText").show();
+        $(".imagesNames").show()
 
         $("#skywalkerImageCharacter").hide();
         $("#fettImageCharacter").hide();
@@ -447,14 +483,26 @@ console.log(skywalker.health, fett.health, vader.health, solo.health);
         $("#fettHP1").hide();
         $("#vaderHP1").hide();
         $("#soloHP1").hide();
+        $("#lukeSkywalker1").hide()
+        $("#bobaFett1").hide()
+        $("#darthVader1").hide()
+        $("#hanSolo1").hide()
         $("#skywalkerHP2").hide();
         $("#fettHP2").hide();
         $("#vaderHP2").hide();
         $("#soloHP2").hide();
+        $("#lukeSkywalker2").hide()
+        $("#bobaFett2").hide()
+        $("#darthVader2").hide()
+        $("#hanSolo2").hide()
         $("#skywalkerHP3").hide();
         $("#fettHP3").hide();
         $("#vaderHP3").hide();
         $("#soloHP3").hide();
+        $("#lukeSkywalker3").hide()
+        $("#bobaFett3").hide()
+        $("#darthVader3").hide()
+        $("#hanSolo3").hide()
 
     })
 })
