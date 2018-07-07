@@ -22,3 +22,54 @@ $("#bobaFett3").hide()
 $("#darthVader3").hide()
 $("#hanSolo3").hide()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // characterText
+    $("#skywalkerHP1").hide();
+    $("#fettHP1").hide();
+    $("#vaderHP1").hide();
+    $("#soloHP1").hide();
+                            // enemyText
+                            $("#skywalkerHP2").hide();
+                            $("#fettHP2").hide();
+                            $("#vaderHP2").hide();
+                            $("#soloHP2").hide();
+    // defenderText
+    $("#skywalkerHP3").hide();
+    $("#fettHP3").hide();
+    $("#vaderHP3").hide();
+    $("#soloHP3").hide();

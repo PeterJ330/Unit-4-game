@@ -216,7 +216,7 @@ body {
 #lukeSkywalker3, #bobaFett3, #darthVader3, #hanSolo3 {
     width: 236px;
     height: 15px;
-    color: yellow;
+    color: black;
     text-align: center;
     float: left;
     /* margin-bottom: 5px; */
@@ -259,7 +259,7 @@ body {
 #skywalkerHP3, #fettHP3, #vaderHP3, #soloHP3 {
     width: 236px;
     height: 15px;
-    color: yellow;
+    color: black;
     text-align: center;
     float: left;
 }

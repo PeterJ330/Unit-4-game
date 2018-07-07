@@ -305,62 +305,78 @@ console.log(skywalker.enemy, fett.enemy, vader.enemy, solo.enemy);
                 skywalker.health -= skywalker.newAttack;
             } else if (fett.defender === true) {
                 fett.health -= skywalker.newAttack;
+                $("#fettHP3").text("HP: "+ fett.health);
                 skywalker.health -= fett.counter;
             } else if (vader.defender === true) {
                 vader.health -= skywalker.newAttack;
+                $("#vaderHP3").text("HP: "+ vader.health);
                 skywalker.health -= vader.counter;
             } else if (solo.defender === true) {
                 solo.health -= skywalker.newAttack;
+                $("#soloHP3").text("HP: "+ solo.health);
                 skywalker.health -= solo.counter;
             }
+            $("#skywalkerHP1").text("HP: "+ skywalker.health);
         } // Closes userCharacter === skywalker else if
         else if (userCharacter === "fett") {
             fett.newAttack += fett.attack;
             if (skywalker.defender === true) {
                 skywalker.health -= fett.newAttack;
+                $("#skywalkerHP3").text("HP: "+ skywalker.health);
                 fett.health -= skywalker.counter;
             } else if (fett.defender === true) {
                 fett.health -= fett.newAttack;
                 fett.health -= fett.counter;
             } else if (vader.defender === true) {
                 vader.health -= fett.newAttack;
+                $("#vaderHP3").text("HP: "+ vader.health);
                 fett.health -= vader.counter;
             } else if (solo.defender === true) {
                 solo.health -= fett.newAttack;
+                $("#soloHP3").text("HP: "+ solo.health);
                 fett.health -= solo.counter;
             }
+            $("#fettHP1").text("HP: "+ fett.health);
         } // Closes userCharacter === fett else if
         else if (userCharacter === "vader") {
             vader.newAttack += vader.attack;
             if (skywalker.defender === true) {
                 skywalker.health -= vader.newAttack;
+                $("#skywalkerHP3").text("HP: "+ skywalker.health);
                 vader.health -= skywalker.counter;
             } else if (fett.defender === true) {
                 fett.health -= vader.newAttack;
+                $("#fettHP3").text("HP: "+ fett.health);
                 vader.health -= fett.counter;
             } else if (vader.defender === true) {
                 vader.health -= vader.newAttack;
                 vader.health -= vader.counter;
             } else if (solo.defender === true) {
                 solo.health -= vader.newAttack;
+                $("#soloHP3").text("HP: "+ solo.health);
                 vader.health -= solo.counter;
             }
+            $("#vaderHP1").text("HP: "+ vader.health);
         } // Closes userCharacter === vader else if
         else if (userCharacter === "solo") {
             solo.newAttack += solo.attack;
             if (skywalker.defender === true) {
                 skywalker.health -= solo.newAttack;
+                $("#skywalkerHP3").text("HP: "+ skywalker.health);
                 solo.health -= skywalker.counter;
             } else if (fett.defender === true) {
                 fett.health -= solo.newAttack;
+                $("#fettHP3").text("HP: "+ fett.health);
                 solo.health -= fett.counter;
             } else if (vader.defender === true) {
                 vader.health -= solo.newAttack;
+                $("#vaderHP3").text("HP: "+ vader.health);
                 solo.health -= vader.counter;
             } else if (solo.defender === true) {
                 solo.health -= solo.newAttack;
                 solo.health -= solo.counter;
             }
+            $("#soloHP1").text("HP: "+ solo.health);
         } // Closes userCharacter === solo else if
 
 console.log("User Character's New Attack: " + userCharacter);
